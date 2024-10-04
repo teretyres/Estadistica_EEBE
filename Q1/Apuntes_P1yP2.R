@@ -1,5 +1,8 @@
 ##P1
+#Archivos .txt
+read.table(file="name.txt", header=TRUE, dec=",", na.strings='NA')
 #Basics
+X<- c(x1, x2, x3,...,x2) #vector
 sort(dades$seccio) #ordena - a +
 cut(dades$seccio, breaks=x) #cortar en x intervalos
 rm(list=ls()) #equivalente a clear all en matlab
@@ -35,10 +38,15 @@ m<- (sum((x-xbar)*(y-ybar)))/(sum((x-xbar)^2)) #derivada por minimos cuadrados
 b<- ybar-m*xbar
 ypredict<- m*x+b #manera clasica
 mod<- lm(y~x) #modelo lineal
-ypredict<- predict(mod,data.frame(x=x))
+summary(mod)
+ypredict<- predict(mod,data.frame(x=x)) #cada x y su valor
 #plotear real y regresion
 plot(x,y)
 lines(x,ypredict)
+Rsq <- (sum(((ypredicted-ybar)^2)))/(sum(((y-ybar)^2))) #coeficiente de determinacion
+R <- sqrt(Rsq) #coeficiente de correlacion
+
+
 
 
 
