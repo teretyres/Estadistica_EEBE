@@ -5,4 +5,4 @@ Las carpetas están organizadas por pruebas
 - Q1: 1r cuestionario online de R
 - Q2: 2ndo cuestionario online de R
 - F: Examen final de estadística
-- Externas: Códigos/ Apuntes no mios
+- Externos: Códigos/ Apuntes no mios
