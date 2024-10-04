@@ -7,6 +7,9 @@ sort(dades$seccio) #ordena - a +
 cut(dades$seccio, breaks=x) #cortar en x intervalos
 rm(list=ls()) #equivalente a clear all en matlab
 sum(X) #sumatorio
+seq(x1,x2,saltos, length.out=n) #secuencia de numeros; n= longitud de la secuencia (si usamos length.out no pueden haber saltos)
+head(x, n) #n primeros valores de x
+tail(x, n) #n ultmos valores de x
 #Tabla de frecuencias
 ni<- table(dades$seccio) #cuantas veces sale cada cosa
 fi<- ni/sum(ni) #Frecuencias relativas
@@ -26,6 +29,7 @@ quantile(dades$seccio, 0.18) #cortar en porcentaje deseado
 ul_cuartil<-quantile(dades$seccio, 0.75) #último cuartil
 pr_cuartil<-quantile(dades$seccio, 0.25) #primer cuartil
 ul_cuartil-pr_cuartil #rango intercuartil
+IQR() #rango intercuartil entre el primero y ultimo cuartil
 #Dispersion alrededor de la media
 var(dades$seccio) #varianza muestral
 sd(dades$seccio) #desviacion tipica
@@ -45,7 +49,6 @@ plot(x,y)
 lines(x,ypredict)
 Rsq <- (sum(((ypredicted-ybar)^2)))/(sum(((y-ybar)^2))) #coeficiente de determinacion
 R <- sqrt(Rsq) #coeficiente de correlacion
-
 
 
 
