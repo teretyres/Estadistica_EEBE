@@ -1,0 +1,2 @@
+attach(DatosCoches)
+summary(DatosCoches)

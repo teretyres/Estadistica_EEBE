@@ -1,0 +1,5 @@
+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
+
+Sys.setenv(OPENAI_API_KEY = "<APIKEY>")
+
+Sys.setenv(OPENAI_API_KEY = "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")
