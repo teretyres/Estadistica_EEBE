@@ -15,15 +15,24 @@ ni<- table(dades$seccio) #cuantas veces sale cada cosa
 fi<- ni/sum(ni) #Frecuencias relativas
 Fi<- cumsum(fi) #suma acumulativa-> Frecuencia acumulada
 Ni<- cumsum(ni) #n acumulada
-cbind(ni, fi, NI, Fi)
-#Pie chart
-pie(fi)
+cbind(ni, fi, Ni, Fi)
+
+pie(fi)#Pie chart
+boxplot(dades)
+
 #Mirar CENTRALIDAD de los datos
 hist(dades$seccio, breaks = x) #histograma con x-1 columnas
 mean(dades$seccio) #media/ mitjana
 median(dades$seccio) #mediana
+#moda
+freq<-table(misdades$Air.Flow)
+max_freq<- max(freq)
+modas<- as.numeric(names(freq)[freq==max_freq])
+modas
+
 quantile(dades$seccio) #cuartil (25%)
 quantile(dades$seccio, 0.18) #cortar en porcentaje deseado
+muestras_200_250 <- sum(misdades$Displacement >= 200 & misdades$Displacement <= 250, na.rm = TRUE)
 #DISPERSION de los datos
 #Dispersion alrededor de la mediana
 ul_cuartil<-quantile(dades$seccio, 0.75) #último cuartil
@@ -50,6 +59,10 @@ lines(x,ypredict)
 Rsq <- (sum(((ypredicted-ybar)^2)))/(sum(((y-ybar)^2))) #coeficiente de determinacion
 R <- sqrt(Rsq) #coeficiente de correlacion
 
+#cuando hay NaN
+,na.rm=TRUE) #cuando se hace la media, mediana, etc
+
+usa_cars <- misdades[misdades$Origin=="USA", ]#subgrupos
 
 
 
