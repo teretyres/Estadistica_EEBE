@@ -10,6 +10,10 @@ sum(X) #sumatorio
 seq(x1,x2,saltos, length.out=n) #secuencia de numeros; n= longitud de la secuencia (si usamos length.out no pueden haber saltos)
 head(x, n) #n primeros valores de x
 tail(x, n) #n ultmos valores de x
+
+#Rangos
+diff(range(misdades))
+
 #Tabla de frecuencias
 ni<- table(dades$seccio) #cuantas veces sale cada cosa
 fi<- ni/sum(ni) #Frecuencias relativas
@@ -18,7 +22,11 @@ Ni<- cumsum(ni) #n acumulada
 cbind(ni, fi, Ni, Fi)
 
 pie(fi)#Pie chart
+pie((tables(misdades)))
 boxplot(dades)
+dotchart(misdades)
+barplot((table(misdades)))
+scatterplot(yaxis xaxis, ((N-1)/N)*var(misdades))
 
 #Mirar CENTRALIDAD de los datos
 hist(dades$seccio, breaks = x) #histograma con x-1 columnas
@@ -26,9 +34,8 @@ mean(dades$seccio) #media/ mitjana
 median(dades$seccio) #mediana
 #moda
 freq<-table(misdades$Air.Flow)
-max_freq<- max(freq)
-modas<- as.numeric(names(freq)[freq==max_freq])
-modas
+freq_ord<-sort(freq, decreasing = TRUE)
+moda<- names(freq_ord[1])
 
 quantile(dades$seccio) #cuartil (25%)
 quantile(dades$seccio, 0.18) #cortar en porcentaje deseado
@@ -40,8 +47,12 @@ pr_cuartil<-quantile(dades$seccio, 0.25) #primer cuartil
 ul_cuartil-pr_cuartil #rango intercuartil
 IQR() #rango intercuartil entre el primero y ultimo cuartil
 #Dispersion alrededor de la media
+N = length(datos_1) 
 var(dades$seccio) #varianza muestral
-sd(dades$seccio) #desviacion tipica
+((N-1)/N)*var(misdades)#varianza no corregida
+sd(dades$seccio) #desviacion tipica corregida
+sqrt((N-1)/N)*sd(misdades)#desviacion típica no corregida
+
 
 ##P2
 #Regresion lineal
