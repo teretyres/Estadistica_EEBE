@@ -69,6 +69,13 @@ plot(x,y)
 lines(x,ypredict)
 Rsq <- (sum(((ypredicted-ybar)^2)))/(sum(((y-ybar)^2))) #coeficiente de determinacion
 R <- sqrt(Rsq) #coeficiente de correlacion
+#dibujar linea de regresioón
+plot(x,y,pch=16,col="red",cex=1.5)
+mod<- lm(x~y)
+abline(mod,col="blue",lwd=5)
+points(8.5, ypred, col = "black", pch= 20, cex=4) #1 punto predecido
+
+R<- sqrt(multiple R squared)
 
 #cuando hay NaN
 ,na.rm=TRUE) #cuando se hace la media, mediana, etc
