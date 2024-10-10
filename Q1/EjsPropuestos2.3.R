@@ -23,6 +23,7 @@ R1_sq
 m*173+b
 (72-b)/m
 
+
 #Ejercicio 2
 x1bar<- mean(anscombe$x1)
 y1bar<- mean(anscombe$y1)
@@ -101,3 +102,10 @@ plot(x5,y5,pch=16,col="red",cex=1.5)
 
 #Ejercicio 4
 plot(ester$t,ester$conc,pch=16,col="red",cex=1.5)
+mod_ester<- lm(log(ester$conc)~ester$t)
+modprueba<- lm(ester$t~ester$conc)
+summary(modprueba)
+summary(mod_ester)
+curve(exp(3.3652700)*exp(-0.0486451*x), add=T, col="blue", lwd=3)
+yepred<- exp(3.3652700)*exp(-0.0486451*70)
+yepred

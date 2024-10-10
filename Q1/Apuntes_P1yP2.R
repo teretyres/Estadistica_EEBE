@@ -3,6 +3,7 @@
 read.table(file="name.txt", header=TRUE, dec=",", na.strings='NA')
 #Basics
 X<- c(x1, x2, x3,...,x2) #vector
+rep(num, cuantas veces)
 sort(dades$seccio) #ordena - a +
 cut(dades$seccio, breaks=x) #cortar en x intervalos
 rm(list=ls()) #equivalente a clear all en matlab
