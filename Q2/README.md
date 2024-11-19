@@ -1,6 +1,7 @@
 # Tutorials
 Pequeños tid-bits de información respecto al funcionamiento de aquellos códigos que necesiten explicación.
-(PD: Soko solo sube funciones 😁)
+
+(PD: Soko solo sube funciones, so para utlizarlas hay q marcarse un cntrl + A y cntrl + Enter; _osea seleccionar todo y ejecutar_ 😁)
  
 ## Probabilidad Distribución Soko
 Realiza calculos de densidad y probabilidad acumulada de:
