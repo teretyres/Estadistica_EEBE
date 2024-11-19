@@ -12,7 +12,7 @@ Los ficheros con apuntes son los siguientes:
 - **Modelos contínuos**
   - Distr. Normal
   - Distr. Uniforme contínua
-  - Distr. Expponencial
+  - Distr. Exponencial
 - **Muestreo** 
   Apuntes de inferencia estadística
   - Media muestral
