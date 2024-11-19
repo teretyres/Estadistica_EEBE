@@ -1,6 +1,6 @@
 # Apuntes para el Q2
 Los ficheros con apuntes son los siguientes:
-- **Basics**
+- **[Basics](./Basics.R)**
   - Básicos aprendidos en Q1 que puede que sean necesarios para el Q2
 - **Modelos discretos**
   - Breve Resumen
@@ -13,7 +13,7 @@ Los ficheros con apuntes son los siguientes:
   - Distr. Normal
   - Distr. Uniforme contínua
   - Distr. Exponencial
-- **Muestreo** 
+- **[Muestreo](./Muestreo.md)** 
   Apuntes de inferencia estadística
   - Media muestral
   - Suma muestral
