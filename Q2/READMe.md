@@ -1,5 +1,5 @@
 # Apuntes para el Q2
-Los fitcheros con apuntes son los siguientes:
+Los ficheros con apuntes son los siguientes:
 - **Basics**
   - Básicos aprendidos en Q1 que puede que sean necesarios para el Q2
 - **Modelos discretos**
