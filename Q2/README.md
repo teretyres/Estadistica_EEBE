@@ -13,7 +13,7 @@ Los ficheros con apuntes son los siguientes:
   - Distr. Normal
   - Distr. Uniforme contínua
   - Distr. Exponencial
-- **[Muestreo](./Muestreo.md)**
+- **[Muestreo](./Muestreo.R)**
   - Apuntes de inferencia estadística
   - Media muestral
   - Suma muestral
