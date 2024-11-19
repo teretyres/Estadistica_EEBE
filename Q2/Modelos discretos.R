@@ -49,6 +49,7 @@ Var_nb<- r*(1-p)/p^2
 
 ## POISSON
 #nº de resultados en un intervalo de tiempo
+dpois(x, lambda)
+f_p<- (exp(-lambda)*lambda^x)/factorial(x)
 E_p<- lambda
 Var_p<- lambda
-dpois(x, lambda)
