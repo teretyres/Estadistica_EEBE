@@ -1,3 +1,25 @@
+# Apuntes para el Q2
+Los ficheros con apuntes son los siguientes:
+- **Basics**
+  - Básicos aprendidos en Q1 que puede que sean necesarios para el Q2
+- **Modelos discretos**
+  - Breve Resumen
+  - Como graficar f(x) y F(x)
+  - Distr. Binomial
+  - Distr. Hipergeométrica
+  - Distr. Binomial negativa
+  - Distr. de Poisson
+- **Modelos contínuos**
+  - Distr. Normal
+  - Distr. Uniforme contínua
+  - Distr. Exponencial
+- **Muestreo** 
+  Apuntes de inferencia estadística
+  - Media muestral
+  - Suma muestral
+  - Desviación típica muestral
+  - TLC: Teorema del límite central
+
 # Tutorials
 Pequeños tid-bits de información respecto al funcionamiento de aquellos códigos que necesiten explicación.
 
@@ -35,3 +57,4 @@ Same as before, pero ahora le das dos X, (X1 y X2) en ese orden concreto y el si
 _OPCIONES_: "< <", "<= <", "< <=", "<= <=", "> >", ">= >", "> >=",">= >="
 
 _DEFAULT_: "< <"
+
