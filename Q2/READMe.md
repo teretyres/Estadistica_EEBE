@@ -6,7 +6,7 @@ Los ficheros con apuntes son los siguientes:
   - Breve Resumen
   - Como graficar f(x) y F(x)
   - Distr. Binomial
-  - Distr. Fipergeométrica
+  - Distr. Hipergeométrica
   - Distr. Binomial negativa
   - Distr. de Poisson
 - **Modelos contínuos**
