@@ -576,14 +576,14 @@ pexp_Zk <- function(X,lambda,signo="=")
   }
   if (signo == ">"|signo == ">=")
   {
-    Probabilidad = pnorm(X,lambda)
+    Probabilidad = pexp(X,lambda)
     
     return(1-Probabilidad)
   }
   
   if (signo == "<"|signo == "<=")
   {
-    Probabilidad = pnorm(X,lambda)
+    Probabilidad = pexp(X,lambda)
     return(Probabilidad)
   }
   return("ERROR")  
