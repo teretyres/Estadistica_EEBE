@@ -1,5 +1,8 @@
 ###DISCRETAS###
 #Binomial Negativa----
+# El mio calcula el numero de PRUEBAS hasta conseguir el valor deseado 
+# El de R calcula el numero de FRACASOS hasta conseguir el valor deseado (X=X-n)
+# No somos lo mismo
 pnbinom_Zk <- function(n,p,X,signo="=")
 {
   #' Esta funcion hace la probabilidad de Binomiales Negativas
