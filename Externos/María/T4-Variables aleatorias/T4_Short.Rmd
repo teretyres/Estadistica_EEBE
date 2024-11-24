@@ -1,0 +1,132 @@
+---
+title: "Variables Aleatorias Discretas y Continuas"
+author: "Santiago Alférez (adaptado del libro de referencia)"
+output:
+  html_notebook: default
+  html_document:
+    df_print: paged
+  pdf_document: default
+editor_options: 
+  markdown: 
+    wrap: sentence\
+---
+
+# Variables Aleatorias Discretas (VAD)
+
+Una variable aleatoria discreta (VAD) toma valores en un conjunto contable.
+
+## Función de densidad
+
+Para una VAD X:
+
+-   $0 \leq f(x) \leq 1$
+-   $P(X = x) = f(x)$
+-   $\sum_{x_i} f(x_i) = 1$
+
+Ejemplo: Lanzamiento de un dado justo
+
+```{r}
+x = 1:6
+f = rep(1/6, 6)
+plot(x, f, type="h", col="red", lwd=3, main="Función de densidad", xlab="X", ylab="f(x)")
+points(x, f, col="red", lwd=10)
+```
+
+## Función de distribución
+
+$F(x) = P(X \leq x) = \sum_{x_i \leq x} P(X = x_i)$
+
+```{r}
+F = cumsum(f)
+plot(c(0,x,7), c(0,F,1), type="s", col="red", lwd=3, main="Función de distribución", xlab="X", ylab="F(x)")
+points(x, F, col="red", lwd=8)
+```
+
+## Valor esperado y varianza
+
+$E[X] = \sum_{i=1}^{k} x_i f(x_i)$
+
+$Var(X) = E[X^2] - E[X]^2 = \sum_{i=1}^{k} x_i^2 f(x_i) - \mu^2$
+
+```{r}
+E_X = sum(x * f)
+E_X2 = sum(x^2 * f)
+Var_X = E_X2 - E_X^2
+print(paste("Valor esperado (E[X]):", E_X))
+print(paste("Varianza (Var(X)):", Var_X))
+```
+
+## Simulación
+
+```{r}
+set.seed(1)
+sim_data = sample(x, 1000, replace=TRUE, prob=f)
+hist(sim_data, breaks=seq(0.5,6.5,by=1), freq=FALSE, main="Simulación vs Teórica")
+lines(x, f, type="h", col="red", lwd=3)
+points(x, f, col="red", lwd=10)
+```
+
+# Variables Aleatorias Continuas (VAC)
+
+Una variable aleatoria continua (VAC) toma valores en un intervalo continuo.
+
+## Función de densidad
+
+Para una VAC X:
+
+-   $f(x) \geq 0$
+-   $\int_{-\infty}^{\infty} f(x) dx = 1$
+-   $P(a \leq X \leq b) = \int_{a}^{b} f(x) dx$
+
+Ejemplo: $f(x) = \frac{1}{8} + \frac{3}{8}x$ para $0 \leq x \leq 2$
+
+```{r}
+x = seq(0, 2, 0.01)
+f = 1/8 + 3/8*x
+plot(x, f, type="l", col="red", lwd=3, main="Función de densidad", xlab="X", ylab="f(x)")
+```
+
+## Función de distribución
+
+$F(x) = P(X \leq x) = \int_{-\infty}^{x} f(u) du$
+
+```{r}
+F = 1/8*x + 3/16*x^2
+plot(x, F, type="l", col="red", lwd=3, main="Función de distribución", xlab="X", ylab="F(x)")
+```
+
+## Valor esperado y varianza
+
+Para una VAC, el valor esperado y la varianza se calculan mediante integrales:
+
+$E[X] = \int_{-\infty}^{\infty} x f(x) dx$
+
+$Var(X) = E[X^2] - E[X]^2 = \int_{-\infty}^{\infty} x^2 f(x) dx - E[X]^2$
+
+Para nuestro ejemplo:
+
+$E[X] = \int_{0}^{2} x (\frac{1}{8} + \frac{3}{8}x) dx = \frac{5}{4} = 1.25$
+
+$Var(X) = \int_{0}^{2} x^2 (\frac{1}{8} + \frac{3}{8}x) dx - (\frac{5}{4})^2 = \frac{13}{48} \approx 0.2708$
+
+## Simulación
+
+```{r}
+set.seed(10)
+x = seq(0, 2, 0.0001)
+f = 1/8 + 3/8*x
+sim_data = sample(x, 10000, replace=TRUE, prob=f)
+hist(sim_data, freq=FALSE, main="Simulación vs Teórica")
+lines(x, 1/8 + 3/8*x, col="red", lwd=3)
+```
+
+## Comparación entre media y varianza
+
+```{r}
+mean_sim = mean(sim_data)
+var_sim = var(sim_data)
+cat("Media teórica:", 1.25, "Media simulada:", mean_sim, "\n")
+cat("Varianza teórica:", 13/48, "Varianza simulada:", var_sim, "\n")
+```
+
+La comparación entre los valores teóricos y simulados nos permite verificar la precisión de la simulación. Si los valores son cercanos, indica que la simulación representa adecuadamente la distribución teórica. Pequeñas diferencias son esperables debido a la naturaleza aleatoria de la simulación.
