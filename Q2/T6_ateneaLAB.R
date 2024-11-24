@@ -1,4 +1,4 @@
-##EJERCICIO 1
+## EJERCICIO 1
 mu<- 0.4412712
 sigma<-sqrt(0.07851927)
 
@@ -45,5 +45,38 @@ pnorm(0.41, mu, sigma/sqrt(n2))- pnorm(0.39, mu, sigma/sqrt(n2))
 pchisq((n2-1)*0.15^2/sigma^2, df=n2-1)- pchisq((n2-1)*0.05^2/sigma^2, df=n2-1)
 
 
-#EJERCICIO 2
+## EJERCICIO 2
+mux<- 80
+sigmax<- 15
+#distr. normal
+#Simular
+n_2<- 9
+N_2<- 100
+size2<- n_2*N_2
+set.seed(321)
+muestra<- rnorm(size2, mux, sigmax)
+samples_2<- as.data.frame(matrix(muestra, ncol=n_2))
+#distr. suma
+sum_samples2<- apply(samples_2, 1, sum)
+hist(sum_samples2, prob=T)
 
+#distr. media
+mean_samples2<- apply(samples_2,1,mean)                               
+hist(mean_samples2, prob=T)       
+curve(dnorm(x, mux, sigmax/sqrt(n_2)), col='red', add=T)
+#distr. varianza
+var_samples2<- apply(samples_2, 1, var)
+hist(var_samples2, prob=T)
+curve(dchisq(x, df=n_2-1), col='red', add=T)
+
+stat<- (n_2-1)*var_samples2/sigmax^2
+hist(stat, prob=T)
+curve(dchisq(x, n_2-1), col='red', add=T)
+
+#P(700<T<800); n=9
+n3<- 9
+pnorm(800, mux*n3, sqrt(n3)*sigmax)- pnorm(700,mux*n3, sqrt(n3)*sigmax)
+#P(78<xbar<80)
+pnorm(80, mux,sigmax/sqrt(n3))-pnorm(78, mux,sigmax/sqrt(n3))
+#P(200<s^2<250)
+pchisq((n3-1)*250/sigmax^2, df=n3-1)-pchisq((n3-1)*200/sigmax^2, df=n3-1)
