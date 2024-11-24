@@ -17,6 +17,8 @@ mean(sim) #media de simu
 median(sim)#mediana de simu
 var(sim)#variación de simu
 
+#mediana 
+qpois(0.5,lambda)
 
 ## BINOMIAL
 #pruebas repetidas con éxito/fracaso
@@ -38,9 +40,9 @@ Var_h<- n*k/N*(1-k/N)*((N-n)/(N-1))
 
 
 ## BINOMIAL NEGATIVA
-#nº de pruebas hasta un nº fijo de éxitos
+#nº de fracasos hasta un nº fijo de éxitos
 
-#x= nº de pruebas
+#x= nº de fracasos
 #r= nº éxitos
 dnbinom(x,r,p)
 E_nb<- r/p
@@ -48,8 +50,10 @@ Var_nb<- r*(1-p)/p^2
 
 
 ## POISSON
-#nº de resultados en un intervalo de tiempo
+#nº de resultados en un intervalo específico de espacio
+#lambda=nº de eventos/espacio
 dpois(x, lambda)
 f_p<- (exp(-lambda)*lambda^x)/factorial(x)
 E_p<- lambda
 Var_p<- lambda
+
