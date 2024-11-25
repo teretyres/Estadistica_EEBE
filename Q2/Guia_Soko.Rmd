@@ -2,7 +2,7 @@
 Mediana <- qpois(0.5,lambda)
 ```
 
-###  Discretas
+### Discretas
 
 1.  **Distribución Binomial**:\
     Se utiliza para contar el número de éxitos en $n$ ensayos independientes, con probabilidad constante $p$ de éxito en cada ensayo. Ejemplo: Lanzar una moneda $n$ veces y contar las caras.
@@ -30,6 +30,10 @@ Var <- np*(1-p)
     Se usa cuando se seleccionan elementos sin reemplazo de un grupo, y se cuentan los éxitos. Ejemplo: Sacar cartas de una baraja sin reemplazar, buscando ases.
 
     ``` r
+    #x= nº éxitos buscados
+    #N= nº población total
+    #k= nº éxitos totales
+    #n= nº de repeticiones (sin reemplazo)
     E_h<- nk/N 
     ```
 
