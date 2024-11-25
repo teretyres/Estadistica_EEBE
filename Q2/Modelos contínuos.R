@@ -10,8 +10,8 @@ Z<- (x-mu)/sigma
 curve(dnorm(x,mu, sd=sigma), xlim=c(x0, xf), col='red') #NO es necesario definir x (x0 y xf marcan inicio y final de la gráfica)
 
 
-## UNIFORME CONTÍNUA: probabilidad unidorme (densidad plana)
-dunif(x,a,b)#ay b son parámetros
+## UNIFORME CONTÍNUA: probabilidad uniforme (densidad plana)
+dunif(x,a,b)#a y b son parámetros
 f_u<- 1/(b-a)
 F_u<- (x-a)/(b-a)
 E_u<- (a+b)/2
