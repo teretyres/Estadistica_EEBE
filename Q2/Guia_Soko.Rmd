@@ -1,0 +1,84 @@
+``` r
+Mediana <- qpois(0.5,lambda)
+```
+
+###  Discretas
+
+1.  **Distribución Binomial**:\
+    Se utiliza para contar el número de éxitos en $n$ ensayos independientes, con probabilidad constante $p$ de éxito en cada ensayo. Ejemplo: Lanzar una moneda $n$ veces y contar las caras.
+
+``` r
+E <-np 
+```
+
+``` r
+Var <- np*(1-p)
+```
+
+1.  **Distribución Binomial Negativa**:\
+    Modela el número de ensayos necesarios para obtener un número fijo de éxitos ($n$), con probabilidad constante $p$ de éxito. Ejemplo: Número de lanzamientos de un dado necesarios para obtener 3 seises.
+
+    ``` r
+    E_nb <- n/p
+    Var_nb <- n*(1-p)/p^2
+    ```
+
+2.  **Distribución Geométrica**:\
+    Caso particular de la binomial negativa, donde se busca el número de ensayos hasta el **primer éxito** ($r = 1$). Ejemplo: Tirar una moneda hasta obtener la primera cara.
+
+3.  **Distribución Hipergeométrica**:\
+    Se usa cuando se seleccionan elementos sin reemplazo de un grupo, y se cuentan los éxitos. Ejemplo: Sacar cartas de una baraja sin reemplazar, buscando ases.
+
+    ``` r
+    E_h<- nk/N 
+    ```
+
+    ``` r
+    Var_h<- nk/N(1-k/N)*((N-n)/(N-1))
+    ```
+
+4.  **Distribución Poisson**:\
+    Modela el número de eventos que ocurren en un intervalo fijo de tiempo o espacio, si ocurren de manera independiente y con una tasa promedio constante. Ejemplo: Número de llamadas a un centro de atención en una hora.
+
+    $X$: Número de eventos ocurridos en cierta unidad de tiempo o espacio. (ex. llamadas)
+
+    $λ$: Tasa promedio de ocurrencia (esperanza y varianza de la distribución). (ex promedio llamadas/hora)
+
+    *λ = nº de eventos/espacio o tiempo*
+
+    ``` r
+    E_p<- lambda
+    Var_p<- lambda
+    ```
+
+### Continuas
+
+***En todas las continuas P(X=x)=0!!***
+
+1.  **Distribución Uniforme**:\
+    Modela una probabilidad constante sobre un intervalo. Todos los valores tienen la misma probabilidad. Ejemplo: Elegir un número al azar entre 1 y 10.
+
+    ``` r
+    f_u<- 1/(b-a)
+    F_u<- (x-a)/(b-a)
+    E_u<- (a+b)/2
+    V_u<- (b-a)^2/12
+    ```
+
+2.  **Distribución Normal**:\
+    Modela variables continuas que tienden a concentrarse alrededor de la media con simetría. Ejemplo: Altura de personas en una población.
+
+    ``` r
+    Var<- sigma^2
+    Z<- (x-mu)/sigma
+    ```
+
+3.  **Distribución Exponencial**:\
+    Se utiliza para modelar tiempos de espera entre eventos en un proceso de Poisson. Ejemplo: Tiempo entre llegadas de clientes a una tienda.
+
+    ``` r
+    f_e<- lambda*exp(-lambda*x)
+    F_e<- 1-exp(-lambda*x)
+    E_e<- 1/lambda
+    V_e<- 1/lambda^2
+    ```
