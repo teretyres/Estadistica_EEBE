@@ -33,12 +33,14 @@ Var <- np*(1-p)
     #x= nº éxitos buscados
     #N= nº población total
     #k= nº éxitos totales
-    #n= nº de repeticiones (sin reemplazo)
+    #n = nº de repeticiones (sin reemplazo)
+    #(en R) 
+      # m=k  n=N-k  k=n
     E_h<- nk/N 
     ```
 
     ``` r
-    Var_h<- nk/N(1-k/N)*((N-n)/(N-1))
+    Var_h<- n*k/N*(1-k/N)*((N-n)/(N-1))
     ```
 
 4.  **Distribución Poisson**:\
