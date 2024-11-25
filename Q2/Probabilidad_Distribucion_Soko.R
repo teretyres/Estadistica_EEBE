@@ -197,7 +197,8 @@ phyper2_Zk <- function(n,k,N,X1,X2,signos="< <")
   }
   return("ERROR")
 }
-
+qhyper_Zk <- function(n,k,N,X,lower.tail=T)
+{return(qhyper(X,k,N-k,n,lower.tail = lower.tail))}
 #Binomial----
 pbinom_Zk <- function(n,p,X,signo="=")
 {
@@ -567,7 +568,22 @@ pnorm2_Zk <- function(X1,X2,media,desv.tipica,signos="< <")
   }
   return("ERROR")
 }
-
+tlc_desv.tipica <- function(X,mu,p,signo ="<")
+{
+  if (signo==">"|signo==">="){
+    p=1-p
+  }
+  answer=(X-mu)/qnorm(p)
+  return(answer)
+}
+tlc_mu <- function(X,desv.tipica,p,signo ="<")
+{
+  if (signo==">"|signo==">="){
+    p=1-p
+  }
+  answer=(X-qnorm(p)*desv.tipica)
+  return(answer)
+}
 #Exponencial----
 pexp_Zk <- function(X,lambda,signo="=")
 {
@@ -727,7 +743,7 @@ punif2_Zk <- function(X1,X2,min,max,signos="< <")
 
 #X^2----
 
-pchisq_Zk <- function(X,df,signo="=")
+pchisq_Zk <- function(S_2,desv.tipica,n,signo="=")
 {
   Probabilidad = 0
   if (signo == "=")
@@ -737,14 +753,14 @@ pchisq_Zk <- function(X,df,signo="=")
   }
   if (signo == ">"|signo == ">=")
   {
-    Probabilidad = pchisq(X,df)
+    Probabilidad = pchisq((n-1)*S_2/desv.tipica^2, df=n-1)
     
     return(1-Probabilidad)
   }
   
   if (signo == "<"|signo == "<=")
   {
-    Probabilidad = pchisq(X,df)
+    Probabilidad = pchisq((n-1)*S_2/desv.tipica^2, df=n-1)
     return(Probabilidad)
   }
   return("ERROR")
