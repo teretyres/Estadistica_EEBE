@@ -116,7 +116,7 @@ phyper_Zk <- function(n,k,N,X,signo="=")
   Probabilidad = 0
   if (X>n) {return("Caso de X>n!!, P=0")}
   if (signo == "="){
-    Probabilidad = dhyper(n,k,N-k,n)
+    Probabilidad = dhyper(X,k,N-k,n)
     return(Probabilidad)
   }
   if (signo == ">"){
