@@ -765,55 +765,55 @@ pchisq_Zk <- function(S_2,desv.tipica,n,signo="=")
   }
   return("ERROR")
 }
-pchisq2_Zk <- function(X1,X2,df,signos="< <")
+pchisq2_Zk <- function(S1_2,S2_2,desv.tipica,n,signos="< <")
 {
   Probabilidad = 0;Prob1 = 0;Prob2 = 0;
   if (signos == "< <"){
-    Prob1=pchisq_Zk(X1,df,"<=")
-    Prob2=pchisq_Zk(X2,df,"<")
+    Prob1=pchisq_Zk(S1_2,desv.tipica,n,"<=")
+    Prob2=pchisq_Zk(S2_2,desv.tipica,n,"<")
     Probabilidad = Prob2-Prob1
     return(Probabilidad)
   }
   if (signos == "< <="){
-    Prob1=pchisq_Zk(X1,df,"<=")
-    Prob2=pchisq_Zk(X2,df,"<=")
+    Prob1=pchisq_Zk(S1_2,desv.tipica,n,"<=")
+    Prob2=pchisq_Zk(S2_2,desv.tipica,n,"<=")
     Probabilidad = Prob2-Prob1
     return(Probabilidad)
   }
   if (signos == "<= <"){
-    Prob1=pchisq_Zk(X1,df,"<")
-    Prob2=pchisq_Zk(X2,df,"<")
+    Prob1=pchisq_Zk(S1_2,desv.tipica,n,"<")
+    Prob2=pchisq_Zk(S2_2,desv.tipica,n,"<")
     Probabilidad = Prob2-Prob1
     return(Probabilidad)
   }
   if (signos == "<= <="){
-    Prob1=pchisq_Zk(X1,df,"<")
-    Prob2=pchisq_Zk(X2,df,"<=")
+    Prob1=pchisq_Zk(S1_2,desv.tipica,n,"<")
+    Prob2=pchisq_Zk(S2_2,desv.tipica,n,"<=")
     Probabilidad = Prob2-Prob1
     return(Probabilidad)
   }
   
   if (signos == "> >"){
-    Prob2=pchisq_Zk(X2,df,"<=")
-    Prob1=pchisq_Zk(X1,df,"<")
+    Prob2=pchisq_Zk(S2_2,desv.tipica,n,"<=")
+    Prob1=pchisq_Zk(S1_2,desv.tipica,n,"<")
     Probabilidad = Prob1-Prob2
     return(Probabilidad)
   }
   if (signos == "> >="){
-    Prob2=pchisq_Zk(X2,df,"<")
-    Prob1=pchisq_Zk(X1,df,"<")
+    Prob2=pchisq_Zk(S2_2,desv.tipica,n,"<")
+    Prob1=pchisq_Zk(S1_2,desv.tipica,n,"<")
     Probabilidad = Prob1-Prob2
     return(Probabilidad)
   }
   if (signos == ">= >"){
-    Prob2=pchisq_Zk(X2,df,"<=")
-    Prob1=pchisq_Zk(X1,df,"<=")
+    Prob2=pchisq_Zk(S2_2,desv.tipica,n,"<=")
+    Prob1=pchisq_Zk(S1_2,desv.tipica,n,"<=")
     Probabilidad = Prob1-Prob2
     return(Probabilidad)}
   
   if (signos == ">= >="){
-    Prob2=pchisq_Zk(X2,df,"<")
-    Prob1=pchisq_Zk(X1,df,"<=")
+    Prob2=pchisq_Zk(S2_2,desv.tipica,n,"<")
+    Prob1=pchisq_Zk(S1_2,desv.tipica,n,"<=")
     Probabilidad = Prob1-Prob2
     return(Probabilidad)
   }
