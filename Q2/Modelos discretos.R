@@ -21,7 +21,10 @@ var(sim)#variación de simu
 qpois(0.5,lambda)
 
 ## BINOMIAL
-#pruebas repetidas con éxito/fracaso
+#pruebas repetidas con éxito/fracaso, ensayos indepedientes
+#n= nº de ensayos
+#p= prob. éxito
+#x= nº de éxitos
 dbinom(x,n,p)
 E_b<-n*p
 Var_b<- n*p(1-p)
@@ -40,12 +43,12 @@ Var_h<- n*k/N*(1-k/N)*((N-n)/(N-1))
 
 
 ## BINOMIAL NEGATIVA
-#nº de fracasos hasta un nº fijo de éxitos
+#nº de ensayos hasta un nº fijo de éxitos
 
-#x= nº de fracasos
+#x= nº de fracasos (ensayos-éxitos)
 #r= nº éxitos
 dnbinom(x,r,p)
-E_nb<- r/p
+E_nb<- r/p 
 Var_nb<- r*(1-p)/p^2
 
 

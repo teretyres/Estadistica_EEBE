@@ -19,6 +19,7 @@ V_u<- (b-a)^2/12
 
 
 ## EXPONENCIAL: tiempo q transcurre antes de un evento
+## SOLO USAR pexp, dexp ES 0!!! TRAMPAAAAA
 dexp(x, lambda)
 f_e<- lambda*exp(-lambda*x)
 F_e<- 1-exp(-lambda*x)
