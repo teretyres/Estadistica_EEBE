@@ -17,8 +17,9 @@ mu_s2<- sigmax^2
 W=(n-1)*s^2/sigmax^2 #(chi^2)
 dchisq((n-1)*s^2/sigmax^2, df=n-1) #n= tamaño de la muestra
 
-## TLC
-#Si n>30, la distribución de la media y la suma muestral es normal.
+## TLC (Teorema del límite central)
+#Si X tiene una distr. normal: la suma y la media siguen una distr. normal y la varianza la distr. de chi
+#Si X tiene una distr. desconocida y n>30: la distribución de la media y la suma muestral es normal.
 
 
 ## FUNCIONES de DENSIDAD
