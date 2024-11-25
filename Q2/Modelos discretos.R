@@ -16,6 +16,7 @@ sim<- rpois(n,lambda) #importante que la simu este anclada a una variable
 mean(sim) #media de simu
 median(sim)#mediana de simu
 var(sim)#variación de simu
+sd(sim)#desviación tipica de simu
 
 #mediana 
 qpois(0.5,lambda)

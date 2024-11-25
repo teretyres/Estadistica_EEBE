@@ -496,7 +496,7 @@ pnorm_Zk <-function(X,media,desv.tipica,signo="=")
   Probabilidad = 0
   if (signo == "=")
   {
-    Probabilidad = dnorm(X,media,desv.tipica)
+    Probabilidad = 0
     return(Probabilidad)
   }
   if (signo == ">"|signo == ">=")
@@ -574,7 +574,7 @@ pexp_Zk <- function(X,lambda,signo="=")
   Probabilidad = 0
   if (signo == "=")
   {
-    Probabilidad = dexp(X,lambda)
+    Probabilidad = 0
     return(Probabilidad)
   }
   if (signo == ">"|signo == ">=")
@@ -652,7 +652,7 @@ punif_Zk <- function(X,min,max,signo="=")
   Probabilidad = 0
   if (signo == "=")
   {
-    Probabilidad = dunif(X,min,max)
+    Probabilidad = 0
     return(Probabilidad)
   }
   if (signo == ">"|signo == ">=")
@@ -732,7 +732,7 @@ pchisq_Zk <- function(X,df,signo="=")
   Probabilidad = 0
   if (signo == "=")
   {
-    Probabilidad = dchisq(X,df)
+    Probabilidad = 0
     return(Probabilidad)
   }
   if (signo == ">"|signo == ">=")
