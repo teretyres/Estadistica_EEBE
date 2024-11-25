@@ -28,7 +28,7 @@ qpois(0.5,lambda)
 #x= nº de éxitos
 dbinom(x,n,p)
 E_b<-n*p
-Var_b<- n*p(1-p)
+Var_b<- n*p*(1-p)
 
 
 ## HIPERGEOMÉTRICA
