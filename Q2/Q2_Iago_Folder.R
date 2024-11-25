@@ -60,9 +60,10 @@ set.seed(591)
 samples2<- sample(x1, 12*800, replace=T, prob=f1)
 samples2_x<- as.data.frame(matrix(samples2, ncol=12))
 #1
-#opción c
+sum_samples2_x<- apply(samples2_x,1,sum)
+mean(sum_samples2_x) #opción e
 #2
-#opción b
+sqrt(var(sum_samples2_x))#opción c
 #3
 mean_sample2_x<- apply(samples2_x,1,mean) 
 mean(mean_sample2_x) #opción e
@@ -77,14 +78,15 @@ curve(dnorm(x,2.42,0.27697), add=TRUE, col='red', lwd=2)
 samples3<- sample(x1, 12*5*800, replace=T, prob=f1)
 samples3_x<-  as.data.frame(matrix(samples3, ncol=12*5))
 #1
-#opción c
+sum_sample3_x<- apply(samples3_x,1, sum)
+mean(sum_sample3_x)#opción b
 #2
-#opción e
+sqrt(var(sum_sample3_x))#opción b
 #3
 mean_sample3_x<-apply(samples3_x, 1, mean)
 mean(mean_sample3_x)#opción e
 #4
-var(mean_sample3_x) #opción d
+sqrt(var(mean_sample3_x)) #opción b
 #5
 hist(mean_sample3_x, prob=T)
 curve(dnorm(x, 2.42, 0.055393), add=T, col='red', lwd=3)
