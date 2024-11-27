@@ -99,3 +99,19 @@ sd(mean_x) # 0.5311241
 var(mean_x) # 0.2820928
 
 
+
+n=12*5
+N=800
+size=n*N
+set.seed(591)
+sample=sample(x,size,replace=T,prob=f)
+obs=as.data.frame(matrix(sample,ncol=n))
+
+sum_x=apply(obs,1,sum)
+mean(sum_x) # 145.4375
+sd(sum_x) # 14.86943
+
+mean_x=apply(obs,1,mean)
+mean(mean_x) # 2.423958
+sd(mean_x) # 0.2478238
+var(mean_x) # 0.06141666
