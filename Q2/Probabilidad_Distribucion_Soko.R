@@ -584,6 +584,14 @@ tlc_mu <- function(X,desv.tipica,p,signo ="<")
   answer=(X-qnorm(p)*desv.tipica)
   return(answer)
 }
+tlc_X <- function(mu,desv.tipica,p,signo="<")
+{
+  if (signo==">"|signo==">="){
+    p=1-p
+  }
+  answer=qnorm(p)*desv.tipica+mu
+  return(answer)
+}
 #Exponencial----
 pexp_Zk <- function(X,lambda,signo="=")
 {
