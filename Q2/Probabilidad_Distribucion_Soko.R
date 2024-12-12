@@ -197,8 +197,7 @@ phyper2_Zk <- function(n,k,N,X1,X2,signos="< <")
   }
   return("ERROR")
 }
-qhyper_Zk <- function(n,k,N,X,lower.tail=T)
-{return(qhyper(X,k,N-k,n,lower.tail = lower.tail))}
+
 #Binomial----
 pbinom_Zk <- function(n,p,X,signo="=")
 {
@@ -297,6 +296,7 @@ pbinom2_Zk <- function(n,p,X1,X2,signos="< <")
 pgeom_Zk <- function(X,p,signo="=")
 {
   Probailidad = 0
+  X=X-1
   if (signo == "=")
   {
     Probabilidad = dgeom(X,p)
