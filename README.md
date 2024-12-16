@@ -1,4 +1,4 @@
-# Estadistica
+# Estadística EEBE
 Códigos/ Apuntes de estadística
 
 Las carpetas están organizadas por pruebas
