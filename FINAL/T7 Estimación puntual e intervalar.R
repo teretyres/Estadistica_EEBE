@@ -39,6 +39,18 @@ Z<- (pbar-p)/sqrt(p*(1-p)/n)
 Z<- qnorm(1-alfa/2)
 IC<- c(pbar- Z*sqrt(p*(1-p)/n), pbar+ Z*sqrt(p*(1-p)/n)) # si n>>> en vez de p podemos usar pbar
 
+## SIMULACIÓN 
 
+L_inf<- function(i){
+  variable1<- rnorm(n,mux,sigmax)
+  mean(variable1)-qnorm(1-alfa/2)*sigmax/sqrt(n)
+}
+set.seed()
+simL_inf<- sapply(1:N, L_inf)
 
-
+L_sup<- function(i){
+  variable2<- rnorm(6,mux,sigmax)
+  mean(variable2)+qnorm(1-alfa/2)*sigmax/sqrt(n)
+}
+set.seed()
+simL_sup<- sapply(1:N, L_sup)

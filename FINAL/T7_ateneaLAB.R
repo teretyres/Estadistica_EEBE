@@ -25,6 +25,23 @@ Limsup<- c(mean_samples+qnorm(1-alfa/2)*sigmax/sqrt(6))
 sum(Limsup<19.5)/10000
 1-0.0045*2
 
+#Apartado b (Versión Kevin) (valores correctos)
+L_inf<- function(i){
+  variable1<- rnorm(6,mux,sigmax)
+  mean(variable1)-qnorm(1-alfa/2)*sigmax/sqrt(6)
+}
+set.seed(123)
+simL_inf<- sapply(1:10000, L_inf)
+sum(simL_inf>19.5)/10000
+
+L_sup<- function(i){
+  variable2<- rnorm(6,mux,sigmax)
+  mean(variable2)+qnorm(1-alfa/2)*sigmax/sqrt(6)
+}
+set.seed(123)
+simL_sup<- sapply(1:10000, L_sup)
+sum(simL_sup<19.5)/10000
+
 #Apartado c (todo correcto)
 E<- sd(X)/sqrt(n); E #Error estándar
 ME<- qt(1-alfa/2, df=n-1)*(sd(X)/sqrt(n)); ME # Margen de error
