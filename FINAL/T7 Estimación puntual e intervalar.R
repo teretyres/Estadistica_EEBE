@@ -1,4 +1,4 @@
-library(BDSA)
+library(BSDA)
 
 ## ESTIMACIÓN INTERVALAR
 
@@ -6,10 +6,12 @@ library(BDSA)
 xbar<- mean(X)#vector de X
 Z<- (xbar-mux)/(sigmax/sqrt(n)) #varianza conocida y distr. normal
 Z<- qnorm(1-alfa/2)#doble cola
+ME<- qnorm(1-alfa/2)*(sigmax/sqrt(n)); ME # Margen de error
+E<- sigmax/sqrt(n); E #Error estándar
 IC<- c(xbar-Z*sigmax/sqrt(n), xbar+Z*sigmax/sqrt(n))
 
 #Si tenemos el vector X
-z.test(x, sigmax, conf.level= 1-alfa)#alternative='greater' (cola sup.)/ 'less' (cola inf.)
+z.test(x, sigma.x=sigmax, conf.level= 1-alfa)#alternative='greater' (cola sup.)/ 'less' (cola inf.)
 
 s<- sd(X)
 TS<-  (xbar-mux)/(s/sqrt(n))#varianza desconocidas y distr. normal
