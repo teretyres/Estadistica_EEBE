@@ -23,7 +23,7 @@ Zc<- qnorm(alfa)# cola inf.
 Zobs<- (xbar-mu0)/(s/sqrt(n))
 
 #3. P-VALOR
-#p-valor dentro de 1-alfa-> rechaza H1
+#p-valor< alfa -> Rechazamos H0
 pvalor<- 2*pnorm(-Zobs)# 2 colas
 pvalor<- pnorm(Zobs)# cola inf.
 pvalor<- 1-pnorm(Zobs)# cola sup.
@@ -34,7 +34,7 @@ pvalor<- 1-pnorm(Zobs)# cola sup.
 #Error: P(NO Rechazar H0| H0 falsa)= beta
 beta<- 2*pnorm(xbar, mu0, sqrt(sigma/n))# 2 colas
 beta<- 1-pnorm(xbar, mu0, sqrt(sigma/n))# cola sup.
-beta<- pnorm(xbar, mu0, sqrt(sigma/n)) # cola inf. 
+beta<- pnorm(xbar, mu0, sqrt(sigma/n))# cola inf. 
 
 ## ACIERTOS
 #No error: P(No rechazar H0| H0 cierta)= 1-alfa

@@ -14,7 +14,7 @@ IC<- c(xbar-Z*sigmax/sqrt(n), xbar+Z*sigmax/sqrt(n))
 z.test(x, sigma.x=sigmax, conf.level= 1-alfa)#alternative='greater' (cola sup.)/ 'less' (cola inf.)
 
 s<- sd(X)
-TS<-  (xbar-mux)/(s/sqrt(n))#varianza desconocidas y distr. normal
+TS<-  (xbar-mux)/(s/sqrt(n))#varianza desconocida y distr. normal
 TS<- qt(1-alfa/2, n-1)#doble cola
 IC<- c(xbar-TS*s/sqrt(n), xbar+TS*s/sqrt(n) )
 
@@ -25,8 +25,8 @@ IC<- c(xbar-Z*sigmax/sqrt(n), xbar+Z*sigmax/sqrt(n)) #n>> y sigmax conocida
 IC<- c(xbar-Z*s/sqrt(n), xbar+Z*s/sqrt(n)) #n>> y sigmax desconocida
 
 # 2. Estimación Varianza
-chi21<- qchisq(alfa/2)#doble cola
-chi22<- qchisq(1-alfa/2)#doble cola
+chi1<- qchisq(alfa/2)#doble cola
+chi2<- qchisq(1-alfa/2)#doble cola
 IC<- c((n-1)*s^2/chi21, (n-1)*s^2/chi22)
 
 # 3. Estimación Proporción
