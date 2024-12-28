@@ -1,5 +1,8 @@
 library(BSDA)
 ################################################################################
+## T7 ESTIMACIÓN PUNTUAL
+#propiedades ln: ln(a*b)= ln(a)+ln(b), ln(a/b)=ln(a)-ln(b), ln(a^b)= b*ln(a) 
+################################################################################
 ## T7 ESTIMACIÓN INTERVALAR
 # 1. Est. Media
 
