@@ -25,8 +25,8 @@ library(BSDA)
 #+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 # 2. Est. Varianza
-#chi1<- qchisq(alfa/2)#doble cola
-#chi2<- qchisq(1-alfa/2)#doble cola
+#chi1<- qchisq(alfa/2, df=n-1)#doble cola
+#chi2<- qchisq(1-alfa/2, df=n-1)#doble cola
 #IC<- c((n-1)*s^2/chi21, (n-1)*s^2/chi22) #para desviación hacer sqrt(IC)
 #+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
@@ -36,7 +36,7 @@ library(BSDA)
 #Z<- (pbar-p)/sqrt(p*(1-p)/n)
 #Z<- qnorm(1-alfa/2)
 #IC<- c(pbar- Z*sqrt(p*(1-p)/n), pbar+ Z*sqrt(p*(1-p)/n)) # si n>>> en vez de p podemos usar pbar
-
+#p==.5 para maximizar (preguntan n)
 ################################################################################
 #SIMULACIÓN LIMITES
 #L_inf<- function(i){
