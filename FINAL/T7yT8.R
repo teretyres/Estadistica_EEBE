@@ -31,12 +31,12 @@ library(BSDA)
 #+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 # 3. Est. Proporción
-#Distr. binom. si:n*p>=5 y n*(1-p)>=5
+#Distr. binom. si:n*pbar>=5 y npbar*(1-pbar)>=5
 #pbar<- X/n
 #Z<- (pbar-p)/sqrt(p*(1-p)/n)
 #Z<- qnorm(1-alfa/2)
 #IC<- c(pbar- Z*sqrt(p*(1-p)/n), pbar+ Z*sqrt(p*(1-p)/n)) # si n>>> en vez de p podemos usar pbar
-#p==.5 para maximizar (preguntan n)
+#p=0.5 para maximizar (preguntan n)
 ################################################################################
 #SIMULACIÓN LIMITES
 #L_inf<- function(i){
