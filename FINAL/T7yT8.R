@@ -31,7 +31,7 @@ library(BSDA)
 #+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 # 3. Est. Proporción
-#Distr. binom. si:n*pbar>=5 y npbar*(1-pbar)>=5
+#Distr. binom. si:n*p>5 y n*(1-p)>5 o n*pbar>5 t n*pbar(1-pbar)>5
 #pbar<- X/n
 #Z<- (pbar-p)/sqrt(p*(1-p)/n)
 #Z<- qnorm(1-alfa/2)
