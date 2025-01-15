@@ -84,7 +84,7 @@ library(BSDA)
 
 # Errores
 #Error I: P(Rechazar H0| H0 cierta)= alfa
-#Error: P(NO Rechazar H0| H0 falsa)= beta
+#Error II: P(NO Rechazar H0| H0 falsa)= beta
 #beta<- 2*pnorm(xbar, mu0, sqrt(sigma/n))# 2 colas
 #beta<- 1-pnorm(xbar, mu0, sqrt(sigma/n))# cola sup.
 #beta<- pnorm(xbar, mu0, sqrt(sigma/n))# cola inf. 
